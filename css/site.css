@@ -1,121 +1,227 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"); /* Importa a fonte Bebas Neue */
-
-/* Configuração geral do corpo da página */
-body {
-    background: #bdb9b9;         /* Define o fundo cinza claro para toda a página */
-    min-height: 100vh;           /* Garante que o body ocupe toda a altura da tela */
-    margin: 0;                   /* Remove margens padrão */
-    padding: 0;                  /* Remove paddings padrão */
-}
-
-header {
-    display: flex;               /* Usa flexbox para alinhar os itens do header */
-    align-items: center;         /* Centraliza verticalmente */
-    justify-content: center;     /* Centraliza horizontalmente */
-    background-color: red;       /* Fundo vermelho */
-    padding: 10px;               /* Espaçamento interno */
-    height: 200px;               /* Altura fixa */
-    border-radius: 90px;         /* Bordas arredondadas */
-    width: 97vw;                 /* Quase toda a largura da tela */
-    margin: 10px auto 0 auto;    /* Centraliza horizontalmente e afasta do topo */
-    position: relative;          /* Permite sobreposição se necessário */
-    z-index: 2;                  /* Garante que fique acima de outros elementos */
-}
-
-header img {
-    width: 177px;                /* Largura fixa do escudo */
-    vertical-align: middle;      /* Alinha verticalmente com o texto */
-    margin-left: 10px;           /* Espaço à esquerda da imagem */
-}
-
-header h1 {
-    display: inline;             /* Exibe o título em linha */
-    vertical-align: middle;      /* Alinha verticalmente com a imagem */
-    font-family: "Bebas Neue", sans-serif; /* Usa a fonte importada */
-    color: white;                /* Cor do texto */
-    font-size: 70px;             /* Tamanho grande */
-    margin: 0;                   /* Remove margens padrão */
-    margin-right: 10px;          /* Espaço à direita do texto */
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: center;
-    width: 97vw;
-    max-width: 1700px;
-    margin: 0 auto;
-    margin-top: 40px;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.menu-flutuante {
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333333;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff0000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 120px;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    padding: 0 24px;
+}
+
+.cabecalho h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #ffffff;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin-right: 24px;
+}
+
+.escudo {
+    height: 80px;
+}
+
+.conteudo-principal {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 160px auto 0;
+    padding: 0 16px;
+}
+
+.menu-lateral {
     display: flex;
     flex-direction: column;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    padding: 16px;
+    height: 240px;
     width: 80px;
-    height: 300px;
-    border-radius: 20px;
-    padding: 10px;
+    position: fixed;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.botao-menu {
+    background: transparent;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 1.5vw;
+    transition: all 0.2s ease;
 }
 
-.menu-item {
-    background-color: transparent; /* Botão sem fundo */
-    border: none;                  /* Remove borda padrão */
-    padding: 10px;                 /* Espaço interno */
-    margin: 5px 0;                 /* Espaço entre os botões */
-    cursor: pointer;               /* Cursor de mão ao passar */
+.botao-menu:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
-.menu-item img {
-    width: 24px;                   /* Tamanho dos ícones */
-    height: 24px;
-}
-
-section {
-    display: flex;
-    justify-content: center;     /* Centraliza o conteúdo do section */
-    align-items: center;
+.secao-conteudo {
     flex: 1;
-    background-color: #e0e0e0;     /* Fundo cinza claro */
-    border-radius: 20px;           /* Bordas arredondadas */
-    padding: 10px;                 /* Espaço interno */
-    max-width: 100%;                 /* Largura fixa */
-    height: 100%;                 /* Altura fixa */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 120px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    min-height: 600px;
 }
 
-.informacoes-container {
+.container-info {
     display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch; /* Ocupa toda a altura do section */
+    gap: 24px;
+    width: 100%;
 }
 
-.menu-informacoes {
-    display: flex;
+.painel-info {
     flex: 1;
-    background-color: white;
-    padding: 10px;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.painel-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #ff0000;
+    font-size: 2rem;
+    margin-bottom: 24px;
     text-align: center;
-    flex-direction: row;
-    border-radius: 20px;
-    min-width: 0; /* Permite encolher em telas pequenas */
-    /* height: 700px;  Remova se quiser altura automática */
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 8px;
+}
+
+.lista-jogos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-jogo {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.item-jogo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.data-jogo {
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.competicao {
+    font-size: 0.9rem;
+    background-color: #ff0000;
+    color: #ffffff;
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin: 8px 0;
+}
+
+.times {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.resultado {
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: inline-block;
+    float: right;
+}
+
+.resultado.vitoria {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.lista-noticias {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-noticia {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 16px;
+    transition: transform 0.2s ease;
+}
+
+.item-noticia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.item-noticia img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-noticia a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.item-noticia a:hover {
+    color: #ff0000;
 }
 
 footer {
-    width: 100%;                   /* Ocupa toda a largura */
-    text-align: center;            /* Centraliza o texto */
-    margin-top: 20px;              /* Espaço acima do rodapé */
-    color: #222;                   /* Cor do texto */
-    font-family: Arial, sans-serif;/* Fonte do rodapé */
-    background: transparent;       /* Fundo transparente */
+    text-align: center;
+    padding: 24px;
+    color: #666666;
+    margin-top: 48px;
 }

@@ -10,6 +10,8 @@ body {
     color: #333333;
     line-height: 1.5;
     min-height: 100vh;
+    background-image: url("imagens/background_inter.png");
+    background-position: center center;
 }
 
 .cabecalho {

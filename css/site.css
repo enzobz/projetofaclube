@@ -115,7 +115,7 @@ body {
     margin: 0 auto; 
     margin-left: 120px; 
     padding: 24px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     min-height: 600px; 
@@ -130,7 +130,7 @@ body {
 
 .painel-info {
     flex: 1;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -141,87 +141,105 @@ body {
     color: #ff0000;
     font-size: 2rem;
     margin-bottom: 24px;
-    text-align: center;
-    border-bottom: 2px solid #ff0000;
+    text-align: left;
+    border-bottom: none;
     padding-bottom: 8px;
 }
 
-.carousel-item {
-    height: 500px;
+.lista-jogos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-jogo {
     background-color: #ffffff;
-    border-radius: 16px;
-    overflow: hidden;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
-.carousel-caption {
-    position: static;
-    padding: 40px;
-    color: #333333 !important;
-    text-align: left;
-    height: 100%;
+.item-jogo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
-.carousel-caption h5 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    color: #ff0000;
-    margin-bottom: 20px;
-    text-align: center;
+.data-jogo {
+    font-size: 0.9rem;
+    color: #666666;
 }
 
-.carousel-caption p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #333333;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 0, 0, 0.7);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 1;
-}
-
-.carousel-control-prev {
-    left: 20px;
-}
-
-.carousel-control-next {
-    right: 20px;
-}
-
-.carousel-indicators {
-    bottom: 20px;
-}
-
-.carousel-indicators li {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 5px;
+.competicao {
+    font-size: 0.9rem;
     background-color: #ff0000;
-    opacity: 0.5;
+    color: #ffffff;
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 8px 0;
 }
 
-.carousel-indicators .active {
-    opacity: 1;
+.times {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 8px 0;
 }
 
-.caption-table {
-    margin-top: 20px;
-    width: 100%;
-    border: none;
+.resultado {
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    float: right;
 }
 
-.caption-table td {
-    padding: 8px 0;
+.resultado.vitoria {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.lista-noticias {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item-noticia {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 16px;
+    transition: transform 0.2s ease;
+}
+
+.item-noticia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.item-noticia img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-noticia a {
+    text-decoration: none;
     color: #333333;
-    border: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    flex: 1;
+}
+
+.item-noticia a:hover {
+    color: #ff0000;
 }
 
 footer {

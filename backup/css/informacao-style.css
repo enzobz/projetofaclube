@@ -1,0 +1,102 @@
+.carousel-item {
+    height: 650px; /* Aumentei a altura do slide do carrossel */
+    position: relative;
+    background-color: #e0e0e0; /* Fallback for slides */
+}
+
+.carousel-caption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    max-width: 850px; /* Aumentei um pouco a largura máxima */
+    height: 90%; /* Permite que a legenda use mais da altura do item */
+    /* max-height: 90%; Removido ou ajustado para permitir mais altura, já que o .carousel-item é mais alto */
+    padding: 25px;
+    color: #111; 
+    background: rgba(255, 255, 255, 0.97); 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start; /* Alinha ao topo para dar espaço para o conteúdo crescer */
+    text-align: left; 
+    overflow-y: auto; /* Mantém a rolagem se o conteúdo AINDA for muito grande */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.carousel-caption h5 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; /* Mantido o tamanho, mas pode ajustar se necessário */
+    color: #ff0000; 
+    margin-bottom: 15px; 
+    width: 100%;
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 10px;
+    flex-shrink: 0; /* Impede que o título encolha se o conteúdo for grande */
+}
+
+.carousel-caption p {
+    font-size: 0.95rem; /* Aumentei um pouco para melhor legibilidade com mais espaço */
+    margin-bottom: 15px;
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
+    color: #333;
+    /* flex-grow: 1; Se você quiser que o parágrafo principal tente ocupar espaço */
+    /* overflow-y: auto; Se apenas o parágrafo devesse rolar, mas geralmente é melhor no .carousel-caption */
+}
+
+.carousel-caption .caption-table {
+    width: 100%;
+    margin-top: 10px; 
+    font-size: 0.9rem; /* Mantido, mas pode ajustar */
+    color: #333;
+    flex-shrink: 0; /* Impede que a tabela encolha */
+}
+
+.carousel-caption .caption-table td {
+    padding: 6px 0; 
+    vertical-align: top;
+    line-height: 1.5; /* Melhor espaçamento */
+}
+
+.carousel-caption .caption-table td:first-child {
+    font-weight: bold;
+    width: auto; 
+    min-width: 170px; /* Ajustado levemente */
+    padding-right: 10px;
+}
+
+.carousel-indicators li {
+    background-color: #cc0000; 
+    border: 1px solid #ff0000;
+}
+.carousel-indicators .active {
+    background-color: #ff0000;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 45px; 
+    height: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.6;
+    background-color: rgba(204, 0, 0, 0.5); 
+    border-radius: 50%;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent; 
+    background-size: 50%, 50%; 
+    width: 20px; 
+    height: 20px;
+}

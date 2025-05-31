@@ -1,0 +1,147 @@
+/* css/index-styles.css */
+
+/* Estilo para o container dos painéis na página INDEX para ficarem lado a lado */
+.container-info-index {
+    display: flex;
+    flex-direction: row; /* Alinha os painéis em linha */
+    gap: 24px;          /* Espaço entre os painéis */
+    align-items: stretch; /* Alinha os painéis para terem a mesma altura */
+}
+
+/* Garante que cada painel dentro do container-info-index ocupe o espaço disponível igualmente */
+/* e permite que eles se estiquem verticalmente */
+.container-info-index .painel-info {
+    flex: 1; /* Cada painel ocupa uma fração igual do espaço na largura */
+    min-width: 0; /* Necessário para flex-basis funcionar corretamente em alguns casos */
+    display: flex; /* Adicionado para permitir que o conteúdo interno também seja flexível se necessário */
+    flex-direction: column; /* Organiza o conteúdo do painel em coluna */
+}
+
+/* Se você quiser que o conteúdo interno do painel (como as listas) preencha o espaço,
+   você pode precisar adicionar flex: 1 aos elementos filhos diretos do .painel-info.
+   Por exemplo:
+.container-info-index .painel-info > ul {
+    flex: 1;
+}
+   Isso pode ou não ser necessário dependendo do seu conteúdo exato e do visual desejado.
+   Comece sem isso e adicione se o conteúdo interno não se esticar como esperado.
+*/
+
+
+/* Styles for the games list (Estilos para a lista de jogos) */
+.lista-jogos {
+    list-style: none;
+    padding-left: 0; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Se quiser que a lista ocupe o espaço vertical disponível no painel: */
+    /* flex: 1; */ 
+}
+
+.item-jogo {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: grid; 
+    grid-template-columns: 1fr auto; 
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "data resultado"
+        "competicao resultado"
+        "times resultado";
+    gap: 4px 16px; 
+    align-items: center; 
+}
+
+.item-jogo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.data-jogo {
+    grid-area: data;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.competicao {
+    grid-area: competicao;
+    font-size: 0.9rem;
+    background-color: #ff0000;
+    color: #ffffff;
+    display: inline-block; 
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.times {
+    grid-area: times;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.resultado {
+    grid-area: resultado;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    justify-self: end; 
+    align-self: center; 
+}
+
+.resultado.vitoria {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+/* Styles for the news list (Estilos para a lista de notícias) */
+.lista-noticias {
+    list-style: none;
+    padding-left: 0; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Se quiser que a lista ocupe o espaço vertical disponível no painel: */
+    /* flex: 1; */
+}
+
+.item-noticia {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    gap: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-noticia:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.item-noticia img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0; 
+}
+
+.item-noticia a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    flex: 1; 
+}
+
+.item-noticia a:hover {
+    color: #ff0000;
+}

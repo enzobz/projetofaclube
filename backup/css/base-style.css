@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f5f5f5; /* Fallback background color */
+}
+
+.background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../imagens/background_inter.png"); 
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff0000; /* Vermelho Inter */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030; /* Bootstrap's fixed navbar z-index is 1030 */
+    height: 120px;
+    padding: 0 24px;
+}
+
+.cabecalho h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #ffffff; /* Branco */
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin-right: 24px;
+    margin-bottom: 0; /* Reset margin for h1 inside flex */
+}
+
+.escudo {
+    height: 80px;
+}
+
+.conteudo-principal {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1400px; 
+    margin: 120px auto 0; /* Adjusted top margin to account for fixed header */
+    padding: 20px 16px; /* Added some padding */
+    flex: 1; 
+}
+
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    padding: 16px;
+    height: 240px; 
+    width: 80px;   
+    position: fixed; 
+    left: 24px;
+    top: calc(120px + 40px); /* Position below header + some margin */
+    /* transform: translateY(-50%); Remove this if top is explicitly set */
+    z-index: 1020; /* Below header, above content */
+    align-items: center;
+    justify-content: space-around;
+}
+
+.botao-menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.botao-menu a,
+.botao-menu:visited,
+.botao-menu:active {
+    color: #333333; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-menu:hover {
+    background-color: #ff0000; 
+    transform: scale(1.1);
+}
+
+.botao-menu:hover svg {
+    stroke: #ffffff; 
+}
+
+.secao-conteudo {
+    flex: 1;
+    width: 100%;
+    /* max-width: 1200px; Let container-info handle max-width if needed */
+    margin-left: 104px; /* Space for the side menu (80px width + 24px left offset of menu) */
+    padding: 24px;
+    opacity: 0.9; /* Slightly transparent for a layered effect */
+    /* min-height: 600px; Let content define height */
+}
+
+/* General container for content panels */
+.container-info {
+    display: flex;
+    flex-direction: column; /* Stack panels vertically */
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px; /* Max width for the content area itself */
+    margin: 0 auto; /* Center the content area */
+}
+
+/* Styling for individual content panels */
+.painel-info {
+    flex: 1; 
+    background-color: #ffffff; 
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.painel-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #ff0000; 
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    text-align: left;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ff0000; 
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 24px;
+    color: #ffffff; 
+    margin-top: 48px; 
+    background-color: #ff0000; 
+}

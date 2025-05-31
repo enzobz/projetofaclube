@@ -16,7 +16,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* Certifique-se que o caminho para sua imagem de fundo está correto */
     background-image: url("../imagens/background_inter.png"); 
 }
 
@@ -93,7 +92,7 @@ body {
 .botao-menu a,
 .botao-menu:visited,
 .botao-menu:active {
-    color: #333333; /* Cor do ícone SVG pode ser controlada aqui se o SVG usar 'currentColor' no stroke */
+    color: #333333;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -104,8 +103,9 @@ body {
     background-color: #ff0000;
     transform: scale(1.1);
 }
+
 .botao-menu:hover svg { 
-    stroke: #ffffff; /* Muda a cor do contorno do SVG no hover do botão */
+    stroke: #ffffff;
 }
 
 .secao-conteudo {
@@ -130,7 +130,7 @@ body {
 
 .painel-info {
     flex: 1;
-    background-color: #e0e0e0; 
+    background-color: #ffffff;
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -146,230 +146,85 @@ body {
     padding-bottom: 8px;
 }
 
-/* Estilos para listas de jogos e notícias (conforme fornecido anteriormente) */
-.lista-jogos {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.item-jogo {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-}
-
-.item-jogo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-}
-
-.data-jogo {
-    font-size: 0.9rem;
-    color: #666666;
-}
-
-.competicao {
-    font-size: 0.9rem;
-    background-color: #ff0000;
-    color: #ffffff;
-    display: inline-block;
-    padding: 4px 8px;
-    border-radius: 8px;
-    margin: 8px 0;
-}
-
-.times {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 8px 0;
-}
-
-.resultado {
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 8px;
-    display: inline-block;
-    float: right;
-}
-
-.resultado.vitoria {
-    background-color: #28a745;
-    color: #ffffff;
-}
-
-.lista-noticias {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.item-noticia {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 16px;
-    transition: transform 0.2s ease;
-}
-
-.item-noticia:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-}
-
-.item-noticia img {
-    width: 100px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.item-noticia a {
-    text-decoration: none;
-    color: #333333;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.item-noticia a:hover {
-    color: #ff0000;
-}
-
-/* No seu arquivo css/site.css */
-
-/* --- INÍCIO DOS ESTILOS DO CARROSSEL --- */
 .carousel-item {
-    /* display: flex; align-items: center; justify-content: center; */ /* Removido pois o caption é absolute */
-    height: 500px; /* Altura fixa para todos os slides, conforme seu último CSS. Ajuste se precisar de mais/menos. */
-    min-height: 500px; /* Redundante se height estiver definida, mas não prejudica. */
-    position: relative; /* Essencial para o posicionamento absoluto da legenda */
-    background-color: transparent; /* Garante que o fundo do painel-info (cinza) apareça se a legenda não cobrir tudo */
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .carousel-caption {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Centraliza o bloco da legenda */
-
-    width: 95%;  /* AUMENTADO: Para ocupar quase toda a largura do slide */
-    height: 90%; /* AUMENTADO: Para ocupar quase toda a altura do slide */
-    /* max-width: 800px; */ /* REMOVIDO: Deixe a largura ser controlada por 'width: 95%' para preencher mais */
-                           /* Se quiser um limite máximo absoluto, pode adicionar, mas 95% deve se ajustar bem */
-
-    padding: 20px !important; /* Reduzido um pouco para dar mais espaço ao conteúdo interno */
-    color: #111 !important;
-    background: rgba(255, 255, 255, 0.95) !important; /* Fundo da legenda um pouco mais opaco */
-    border-radius: 10px; /* Bordas um pouco menores para um visual mais integrado */
-    
-    /* Para centralizar o CONTEÚDO DENTRO da legenda */
-    display: flex;
-    flex-direction: column;
-    align-items: center;    /* Centraliza horizontalmente os filhos diretos (h5, p, table) */
-    justify-content: center;/* Centraliza verticalmente os filhos diretos */
-    text-align: center;     /* Centraliza o texto dentro dos parágrafos e h5 */
-    
-    margin: 0; /* Importante para elementos com position: absolute */
-    overflow-y: auto; /* Adiciona barra de rolagem interna SE o conteúdo da legenda exceder sua altura de 90% */
+    position: static;
+    padding: 40px;
+    color: #333333 !important;
+    text-align: left;
+    height: 100%;
 }
 
 .carousel-caption h5 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem; /* Ajuste conforme necessário */
-    color: #c00;
-    margin-bottom: 10px; 
-    width: 100%; /* Para garantir que o text-align:center funcione bem */
+    font-size: 2rem;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .carousel-caption p {
-    font-size: 0.9rem; /* Ajuste para caber mais texto ou para legibilidade */
-    margin-bottom: 10px;
-    line-height: 1.5;
-    width: 90%; /* Limita a largura do parágrafo dentro da legenda */
-    max-width: 700px; /* Um limite para não ficar excessivamente largo */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333333;
 }
 
-.carousel-caption .caption-table {
-    width: 90%; /* Tabela ocupa boa parte da legenda */
-    max-width: 550px; /* Limite para a tabela não ficar muito larga */
-    margin-top: 10px;
-    font-size: 0.85rem; /* Fonte menor para a tabela */
-    color: #333;
-}
-
-.carousel-caption .caption-table td {
-    padding: 4px 2px; /* Padding menor nas células */
-    vertical-align: middle; /* Tenta centralizar verticalmente o conteúdo da célula */
-    line-height: 1.4;
-    text-align: left; /* Mantém o texto da tabela alinhado à esquerda para melhor leitura */
-}
-
-.carousel-caption .caption-table td:first-child {
-    width: auto; /* Deixa o navegador definir com base no conteúdo */
-    font-weight: bold; /* Rótulos em negrito */
-    padding-right: 8px; /* Espaço entre rótulo e valor */
-}
-
-.carousel-caption .caption-table td:last-child {
-    width: auto; /* Deixa o navegador definir */
-}
-
-
-/* Estilos para os indicadores (pontinhos) - Mantidos como no seu CSS */
-.carousel-indicators li {
-    background-color: #cc0000;
-}
-.carousel-indicators .active {
-    background-color: #8b0000;
-}
-
-/* Mantém as setas dentro do slide e centralizadas verticalmente - Mantidos como no seu CSS */
 .carousel-control-prev,
 .carousel-control-next {
-    position: absolute; 
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 50%;
     top: 50%;
-    transform: translateY(-50%); 
-    width: 50px;  /* Reduzido um pouco */
-    height: 50px; /* Reduzido um pouco */
-    z-index: 10;  
+    transform: translateY(-50%);
+    opacity: 1;
 }
 
 .carousel-control-prev {
-    left: 10px; /* Mais próximo da borda */
+    left: 20px;
 }
 
 .carousel-control-next {
-    right: 10px; /* Mais próximo da borda */
+    right: 20px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    width: 35px;  /* Reduzido */
-    height: 35px; /* Reduzido */
-    background-color: rgba(204, 0, 0, 0.6); /* Um pouco mais sutil */
-    border-radius: 50%; 
-    padding: 8px; /* Ajustado */
+.carousel-indicators {
+    bottom: 20px;
 }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-    background-color: rgba(139, 0, 0, 0.8); 
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: #ff0000;
+    opacity: 0.5;
 }
-/* --- FIM DOS ESTILOS DO CARROSSEL --- */
 
-/* ... (resto do seu CSS, incluindo o footer) ... */
+.carousel-indicators .active {
+    opacity: 1;
+}
+
+.caption-table {
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+}
+
+.caption-table td {
+    padding: 8px 0;
+    color: #333333;
+    border: none;
+}
+
 footer {
-    z-index: 10;
     text-align: center;
     width: 100%; 
     padding: 24px;
